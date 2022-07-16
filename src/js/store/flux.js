@@ -1,18 +1,37 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			swData: null
+			characterData: null,
+			vehicleData: null,
+			planetData: null,
 		},
 		actions: {
-			loadSomeData: () => {
-				// const store = getStore();
+			loadStarWarsData: () => {
+				// fetch character data
 				fetch('https://www.swapi.tech/api/people/', {
 					method: 'GET'
 				}).then(res => {
 					return res.json()
 				}).then(data => {
-					console.log(data)
-					setStore({swData: data})
+					setStore({characterData: data.results})
+				})
+
+				// fetch planet data
+				fetch('https://www.swapi.tech/api/planets/', {
+					method: 'GET'
+				}).then(res => {
+					return res.json()
+				}).then(data => {
+					setStore({vehicleData: data.results})
+				})
+
+				// fetch vehicle data
+				fetch('https://www.swapi.tech/api/starships/', {
+					method: 'GET'
+				}).then(res => {
+					return res.json()
+				}).then(data => {
+					setStore({planetData: data.results})
 				})
 			},
 		}

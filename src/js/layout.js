@@ -8,7 +8,6 @@ import { Footer } from "./component/footer";
 import Character from "./views/character.jsx";
 import Planet from "./views/planet.jsx";
 import Vehicle from "./views/vehicle.jsx";
-import Demo from './views/demo.js';
 
 //create your first component
 const Layout = () => {
@@ -33,9 +32,6 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/vehicles/:theid">
 							<Vehicle />
-						</Route>
-						<Route exact path="/demo">
-							<Demo />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
