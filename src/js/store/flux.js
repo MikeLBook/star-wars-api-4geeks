@@ -2,7 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			characterData: null,
-			vehicleData: null,
+			starshipData: null,
 			planetData: null,
 		},
 		actions: {
@@ -22,7 +22,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}).then(res => {
 					return res.json()
 				}).then(data => {
-					setStore({vehicleData: data.results})
+					setStore({planetData: data.results})
 				})
 
 				// fetch vehicle data
@@ -31,7 +31,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}).then(res => {
 					return res.json()
 				}).then(data => {
-					setStore({planetData: data.results})
+					setStore({starshipData: data.results})
 				})
 			},
 		}
