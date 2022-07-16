@@ -6,11 +6,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 		actions: {
 			loadSomeData: () => {
 				// const store = getStore();
-				fetch('https://www.swapi.tech/api/people/1', {
+				fetch('https://www.swapi.tech/api/people/', {
 					method: 'GET'
 				}).then(res => {
 					return res.json()
 				}).then(data => {
+					console.log(data)
 					setStore({swData: data})
 				})
 			},
